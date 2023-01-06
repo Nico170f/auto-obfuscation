@@ -1,4 +1,21 @@
 {
+  "name": "auto-obfuscation",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nico170f/auto-obfuscation.git"
+  },
+  "author": "4Free#1127",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nico170f/auto-obfuscation/issues"
+  },
+  "homepage": "https://github.com/Nico170f/auto-obfuscation#readme",
+  "description": "",
   "dependencies": {
     "file-system": "^2.2.2"
   },
