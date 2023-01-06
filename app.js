@@ -5,7 +5,8 @@ const Dir = "./Dir";
 const Dist = ".\\Dist"
 
 let ALLOWED_FILES = [".js"]
-let EXCEPTION_FILES = ["preload.js"];
+let EXCEPTION_FILES = ["preload"];
+let EXCEPTION_EXTENSION = ["json"];
 
 start()
 async function start() {
@@ -41,7 +42,7 @@ async function start() {
  * @return {boolean} Whether  the given file is allowed.
  */
 async function checkExceptions(filename){
-    if(filename.includes('json')) return false;
+    if(EXCEPTION_EXTENSION.includes(filename.split(".")[1])) return false;
     if(EXCEPTION_FILES.includes(filename)) return false;
     return true;
 }
