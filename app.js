@@ -13,15 +13,16 @@ start()
 async function start() {
     await fs.recurseSync(Dir, async function (filepath, relative, filename) {
 
-
+        //If given filename is {undefined} it's a directory
         if (filename == undefined) {
             if (!fs.existsSync(`${Dist}\\${relative}`)) {
                 await fs.mkdirSync(`${Dist}\\${relative}`);
             }
         } 
-        
+        //If given filename is "allowed" obfuscate it
         else if (filename.includes(ALLOWED_FILES[0]) && await checkExceptions(filename)) await obfuscateFile(relative)
 
+        //Else copy the file to Dist folder
         else {
 
             await fs.copyFile(`${Dir}\\${relative}`, `${Dist}\\${relative}`, (err) => {
