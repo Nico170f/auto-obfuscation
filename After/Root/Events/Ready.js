@@ -1,1 +1,0 @@
-module['exports']={'name':'ready','run':async _0x4743bf=>{const _0x28e5eb=require('chalk');_0x4743bf['user']['setActivity']('Discord',{'type':'WATCHING'}),console['log'](_0x28e5eb['bold']['blueBright']('[APPLICATION]\x20')+_0x28e5eb['reset']['bold']('Bot\x20ready.'));}};
