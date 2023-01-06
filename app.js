@@ -8,6 +8,7 @@ let ALLOWED_FILES = [".js"]
 let EXCEPTION_FILES = ["preload"];
 let EXCEPTION_EXTENSION = ["json"];
 
+
 start()
 async function start() {
     await fs.recurseSync(Dir, async function (filepath, relative, filename) {
