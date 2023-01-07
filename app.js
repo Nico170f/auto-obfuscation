@@ -4,8 +4,8 @@ const fs = require('file-system');
 const Dir = "./Dir";
 const Dist = ".\\Dist"
 
-let ALLOWED_FILES = [".js"]
-let EXCEPTION_FILES = ["preload"];
+let ALLOWED_FILES = [".js"];
+let EXCEPTION_FILES = ["preload.js"];
 let EXCEPTION_EXTENSION = ["json"];
 
 
@@ -18,7 +18,8 @@ async function start() {
             if (!fs.existsSync(`${Dist}\\${relative}`)) {
                 await fs.mkdirSync(`${Dist}\\${relative}`);
             }
-        } 
+        }
+        
         //If given filename is "allowed" obfuscate it
         else if (filename.includes(ALLOWED_FILES[0]) && await checkExceptions(filename)) await obfuscateFile(relative)
 
@@ -41,7 +42,7 @@ async function start() {
  * Returns whether the given file should be obfuscated or not.
  *
  * @param {string} filename Name of the file to check.
- * @return {boolean} Whether  the given file is allowed.
+ * @return {boolean} Whether the given file is allowed.
  */
 async function checkExceptions(filename){
     if(EXCEPTION_EXTENSION.includes(filename.split(".")[1])) return false;
